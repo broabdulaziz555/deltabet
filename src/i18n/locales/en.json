@@ -4,7 +4,8 @@
     "history": "History",
     "wallet": "Wallet",
     "profile": "Profile",
-    "deposit": "Deposit"
+    "deposit": "Deposit",
+    "withdraw": "Withdraw"
   },
   "auth": {
     "login": "Login",
