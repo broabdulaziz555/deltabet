@@ -30,8 +30,15 @@ api.interceptors.response.use(
         original.headers.Authorization = `Bearer ${data.access}`
         return api(original)
       } catch {
-        localStorage.clear()
-        window.location.href = '/login'
+        // Clear everything without causing a redirect loop
+        localStorage.removeItem('access_token')
+        localStorage.removeItem('refresh_token')
+        localStorage.removeItem('deltabet-auth')
+        // Only redirect if not already on an auth page
+        const path = window.location.pathname
+        if (!path.includes('/login') && !path.includes('/register') && !path.startsWith('/admin')) {
+          window.location.replace('/login')
+        }
       }
     }
     return Promise.reject(err)

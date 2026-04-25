@@ -10,11 +10,10 @@ import './i18n'
 const qc = new QueryClient({ defaultOptions: { queries: { retry: 1, staleTime: 30000 } } })
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <QueryClientProvider client={qc}>
-      <BrowserRouter>
-        <App/>
-        <Toaster
+  <QueryClientProvider client={qc}>
+    <BrowserRouter>
+      <App/>
+      <Toaster
           position="top-center"
           toastOptions={{
             duration: 3000,
@@ -32,7 +31,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             error:   { iconTheme: { primary: '#e63946', secondary: '#fff' } },
           }}
         />
-      </BrowserRouter>
-    </QueryClientProvider>
-  </React.StrictMode>
+    </BrowserRouter>
+  </QueryClientProvider>
 )

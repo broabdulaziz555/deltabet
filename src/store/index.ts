@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-// ─── Types ───
 export interface User {
   id: number
   username: string
@@ -26,6 +25,8 @@ interface AuthState {
   accessToken: string | null
   isAuthenticated: boolean
   isAdmin: boolean
+  _hasHydrated: boolean
+  setHasHydrated: (v: boolean) => void
   setAuth: (user: User, access: string, refresh: string) => void
   setUser: (user: User) => void
   updateBalance: (balance: string, bonus: string) => void
@@ -39,6 +40,8 @@ export const useAuthStore = create<AuthState>()(
       accessToken: null,
       isAuthenticated: false,
       isAdmin: false,
+      _hasHydrated: false,
+      setHasHydrated: (v) => set({ _hasHydrated: v }),
       setAuth: (user, access, refresh) => {
         localStorage.setItem('access_token', access)
         localStorage.setItem('refresh_token', refresh)
@@ -53,7 +56,13 @@ export const useAuthStore = create<AuthState>()(
         set({ user: null, accessToken: null, isAuthenticated: false, isAdmin: false })
       },
     }),
-    { name: 'deltabet-auth', partialize: (s) => ({ user: s.user, isAuthenticated: s.isAuthenticated }) }
+    {
+      name: 'deltabet-auth',
+      partialize: (s) => ({ user: s.user, isAuthenticated: s.isAuthenticated }),
+      onRehydrateStorage: () => (state) => {
+        state?.setHasHydrated(true)
+      },
+    }
   )
 )
 
