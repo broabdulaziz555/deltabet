@@ -6,6 +6,8 @@ import { Eye, EyeOff, AlertCircle } from 'lucide-react'
 import { authAPI, parseError } from '../../api/client'
 import { useAuthStore } from '../../store'
 import { Logo } from '../../components/Logo'
+import { LANGUAGES } from '../../i18n'
+import i18n from '../../i18n'
 
 interface FormData { username: string; password: string }
 
@@ -16,6 +18,9 @@ const Register: React.FC = () => {
   const [showPw, setShowPw] = useState(false)
   const [serverError, setServerError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [lang, setLang] = useState(i18n.language)
+
+  const switchLang = (code: string) => { i18n.changeLanguage(code); setLang(code) }
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
 
@@ -45,6 +50,19 @@ const Register: React.FC = () => {
       </div>
 
       <div className="w-full max-w-sm relative z-10">
+        {/* Language switcher */}
+        <div className="flex justify-end mb-6 gap-1">
+          {LANGUAGES.map((l) => (
+            <button
+              key={l.code}
+              onClick={() => switchLang(l.code)}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${lang === l.code ? 'bg-db-red/20 text-db-red' : 'text-db-muted hover:text-db-text2'}`}
+            >
+              {l.flag} {l.code.toUpperCase()}
+            </button>
+          ))}
+        </div>
+
         <div className="flex flex-col items-center mb-8">
           <Logo size="lg" />
         </div>
