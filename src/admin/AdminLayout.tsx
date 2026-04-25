@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { NavLink, useNavigate, Outlet } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { LayoutDashboard, Users, ArrowDownLeft, ArrowUpRight, Tag, LogOut, Menu, X, ChevronRight } from 'lucide-react'
-import { useAuthStore } from '../../store'
-import { Logo } from '../../components/Logo'
+import { useAuthStore } from '../store'
+import { Logo } from '../components/Logo'
 
 const NAV = [
   { path: '/admin/dashboard',   icon: LayoutDashboard, key: 'dashboard' },
@@ -35,7 +35,7 @@ const AdminLayout: React.FC = () => {
       <nav className="flex-1 p-3 space-y-0.5 overflow-y-auto">
         {NAV.map(({ path, icon: Icon, key }) => (
           <NavLink key={path} to={path}
-            className={({ isActive }) => `admin-sidebar-item ${isActive ? 'active' : ''}`}
+            className={({ isActive }: { isActive: boolean }) => `admin-sidebar-item ${isActive ? 'active' : ''}`}
             onClick={() => setSidebarOpen(false)}>
             <Icon size={17}/>
             <span>{t(`admin.${key}`)}</span>

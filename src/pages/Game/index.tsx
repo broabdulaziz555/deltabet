@@ -2,8 +2,8 @@ import React, { useState, useRef, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import toast from 'react-hot-toast'
-import { TrendingUp, Zap } from 'lucide-react'
-import { gameAPI, parseError, fmtUZS } from '../../api/client'
+import { TrendingUp, Zap, History } from 'lucide-react'
+import { gameAPI, authAPI, parseError, fmtUZS } from '../../api/client'
 import { useAuthStore, useGameStore } from '../../store'
 import MobileLayout from '../../components/Layout/MobileLayout'
 
@@ -152,7 +152,6 @@ const Game: React.FC = () => {
                 onClick={async () => {
                   if (gameMode === m || isAnimating) return
                   try {
-                    const { authAPI } = await import('../../api/client')
                     await authAPI.switchMode(m)
                     setUser({ ...user!, game_mode: m })
                   } catch { toast.error('Failed to switch mode') }
@@ -387,5 +386,4 @@ const Game: React.FC = () => {
 }
 
 // Add missing import
-import { History } from 'lucide-react'
 export default Game

@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Eye, EyeOff, AlertCircle, Shield, Lock, User } from 'lucide-react'
-import { authAPI, parseError } from '../../api/client'
-import { useAuthStore } from '../../store'
-import { DeltaIcon } from '../../components/Logo'
+import { authAPI, parseError } from '../api/client'
+import { useAuthStore } from '../store'
+import { DeltaIcon } from '../components/Logo'
 
 const AdminLogin: React.FC = () => {
   const { t } = useTranslation()

@@ -36,7 +36,7 @@ export const Button: React.FC<ButtonProps> = ({
 }
 
 // ─── Input ───
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
   label?: string
   error?: string
   suffix?: React.ReactNode
