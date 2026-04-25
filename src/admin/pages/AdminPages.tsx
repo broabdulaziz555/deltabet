@@ -348,3 +348,76 @@ export const AdminPromos: React.FC = () => {
     </div>
   )
 }
+
+// ─────────────────────────────────────────────
+// Admin All Bets
+// ─────────────────────────────────────────────
+export const AdminBets: React.FC = () => {
+  const [bets, setBets] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+  const [page, setPage] = useState(1)
+  const [hasMore, setHasMore] = useState(false)
+
+  const load = async (p = 1) => {
+    setLoading(true)
+    try {
+      const r = await adminAPI.betHistory({ page: p })
+      if (p === 1) setBets(r.data.results || r.data || [])
+      else setBets((prev) => [...prev, ...(r.data.results || [])])
+      setHasMore(!!r.data.next)
+    } catch { } finally { setLoading(false) }
+  }
+  useEffect(() => { load(1) }, [])
+
+  return (
+    <div className="p-4 md:p-6">
+      <div className="flex items-center justify-between mb-4">
+        <h1 className="text-xl font-black">All Bets</h1>
+        <button onClick={() => load(1)} className="text-db-text2 hover:text-white p-2"><RefreshCw size={16}/></button>
+      </div>
+      {loading && page === 1 ? <Spinner/> : (
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead><tr className="text-left text-xs text-db-text2 uppercase tracking-wider border-b border-white/5">
+              <th className="pb-3 pr-4">User</th><th className="pb-3 pr-4">Amount</th>
+              <th className="pb-3 pr-4">Target</th><th className="pb-3 pr-4">Crash</th>
+              <th className="pb-3 pr-4">Result</th><th className="pb-3 pr-4">Mode</th>
+              <th className="pb-3 pr-4">Payout</th><th className="pb-3">Date</th>
+            </tr></thead>
+            <tbody className="divide-y divide-white/5">
+              {bets.map((b: any) => (
+                <tr key={b.id} className="hover:bg-white/2 transition-colors">
+                  <td className="py-3 pr-4 font-semibold">{b.user?.username || '—'}</td>
+                  <td className="py-3 pr-4 mono">{fmtUZS(b.amount, true)}</td>
+                  <td className="py-3 pr-4 mono text-db-blue">{parseFloat(b.target_multiplier).toFixed(2)}x</td>
+                  <td className="py-3 pr-4 mono font-bold" style={{ color: b.status==='won'?'#06d6a0':'#e63946' }}>
+                    {parseFloat(b.crash_point).toFixed(2)}x
+                  </td>
+                  <td className="py-3 pr-4"><span className={`badge-${b.status}`}>{b.status.toUpperCase()}</span></td>
+                  <td className="py-3 pr-4">
+                    <span className={`text-xs px-2 py-0.5 rounded-lg font-bold ${b.mode==='demo'?'bg-db-blue/10 text-db-blue':'bg-db-red/10 text-db-red'}`}>
+                      {b.mode?.toUpperCase()}
+                    </span>
+                  </td>
+                  <td className="py-3 pr-4 mono" style={{ color:'#06d6a0' }}>
+                    {b.status==='won'?'+'+fmtUZS(b.profit,true):'—'}
+                  </td>
+                  <td className="py-3 text-xs text-db-text2 whitespace-nowrap">
+                    {new Date(b.created_at).toLocaleDateString('ru-RU')} {new Date(b.created_at).toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'})}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {bets.length === 0 && <div className="text-center py-12 text-db-text2">No bets yet</div>}
+          {hasMore && (
+            <button onClick={() => { const np=page+1; setPage(np); load(np) }} disabled={loading}
+              className="w-full py-3 text-db-blue text-sm font-semibold mt-3">
+              {loading ? <Spinner/> : 'Load more'}
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
