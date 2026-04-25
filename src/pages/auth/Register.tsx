@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useForm } from 'react-hook-form'
-import { Eye, EyeOff, AlertCircle, User, Lock } from 'lucide-react'
+import { Eye, EyeOff, AlertCircle } from 'lucide-react'
 import { authAPI, parseError } from '../../api/client'
 import { useAuthStore } from '../../store'
 import { Logo } from '../../components/Logo'
@@ -62,29 +62,27 @@ const Register: React.FC = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
             <div className="flex flex-col gap-1.5">
               <label className="text-xs font-semibold text-db-text2 uppercase tracking-wider">{t('auth.username')}</label>
-              <div className="relative flex items-center">
-                <User size={16} className="absolute left-3 text-db-muted pointer-events-none" />
-                <input
-                  className={`db-input pl-9 ${errors.username ? 'error' : ''}`}
-                  placeholder={t('auth.usernamePlaceholder')}
-                  autoCapitalize="none" autoCorrect="off"
-                  {...register('username', {
-                    required: t('auth.errors.username_short'),
-                    minLength: { value: 8, message: t('auth.errors.username_short') },
-                    maxLength: { value: 32, message: t('auth.errors.username_long') },
-                  })}
-                />
-              </div>
+              <input
+                className={`db-input ${errors.username ? 'error' : ''}`}
+                placeholder={t('auth.usernamePlaceholder')}
+                autoCapitalize="none"
+                autoCorrect="off"
+                {...register('username', {
+                  required: t('auth.errors.username_short'),
+                  minLength: { value: 8, message: t('auth.errors.username_short') },
+                  maxLength: { value: 32, message: t('auth.errors.username_long') },
+                })}
+              />
               {errors.username && <p className="text-xs text-db-red">{errors.username.message}</p>}
             </div>
 
             <div className="flex flex-col gap-1.5">
               <label className="text-xs font-semibold text-db-text2 uppercase tracking-wider">{t('auth.password')}</label>
-              <div className="relative flex items-center">
-                <Lock size={16} className="absolute left-3 text-db-muted pointer-events-none" />
+              <div className="relative">
                 <input
                   type={showPw ? 'text' : 'password'}
-                  className={`db-input pl-9 pr-10 ${errors.password ? 'error' : ''}`}
+                  className={`db-input ${errors.password ? 'error' : ''}`}
+                  style={{ paddingRight: '44px' }}
                   placeholder={t('auth.passwordPlaceholder')}
                   {...register('password', {
                     required: t('auth.errors.password_short'),
@@ -92,7 +90,11 @@ const Register: React.FC = () => {
                     maxLength: { value: 32, message: t('auth.errors.username_long') },
                   })}
                 />
-                <button type="button" onClick={() => setShowPw(!showPw)} className="absolute right-3 text-db-muted hover:text-db-text2">
+                <button
+                  type="button"
+                  onClick={() => setShowPw(!showPw)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-db-muted hover:text-db-text2"
+                >
                   {showPw ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
@@ -105,7 +107,9 @@ const Register: React.FC = () => {
               <div>• Remember your credentials — no recovery</div>
             </div>
 
-            <button type="submit" disabled={loading}
+            <button
+              type="submit"
+              disabled={loading}
               className="btn-bet w-full py-4 text-white mt-1 flex items-center justify-center gap-2"
               style={{ background: loading ? undefined : 'linear-gradient(135deg,#3a86ff,#1565c0)' }}
             >
