@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import toast from 'react-hot-toast'
 import { TrendingUp, Zap, History } from 'lucide-react'
-import { gameAPI, authAPI, parseError, fmtUZS } from '../../api/client'
+import { gameAPI, parseError, fmtUZS } from '../../api/client'
 import { useAuthStore, useGameStore } from '../../store'
 import MobileLayout from '../../components/Layout/MobileLayout'
 
@@ -36,12 +36,9 @@ const Game: React.FC = () => {
   const [showConfetti, setShowConfetti] = useState(false)
   const animFrameRef = useRef<number>(0)
 
-  const gameMode = user?.game_mode || 'demo'
-
   const winChance = (() => {
     const t = parseFloat(targetX)
     if (isNaN(t) || t <= 0) return '—'
-    if (gameMode === 'demo') return '~95.0000%'
     return (1 / t * 99).toFixed(4) + '%'
   })()
 
@@ -90,24 +87,6 @@ const Game: React.FC = () => {
   return (
     <MobileLayout>
       <div className="flex flex-col min-h-full pb-2" style={{ background: 'linear-gradient(180deg,#07070f 0%,#0c0c1a 100%)' }}>
-
-        {/* Mode toggle */}
-        <div className="px-4 pt-3 pb-1">
-          <div className="mode-toggle">
-            {(['demo','real'] as const).map((m) => (
-              <button key={m}
-                className={`mode-toggle-btn ${m} ${gameMode === m ? `active-${m}` : ''}`}
-                onClick={async () => {
-                  if (gameMode === m || !canBet) return
-                  try { await authAPI.switchMode(m); setUser({ ...user!, game_mode: m }) }
-                  catch { toast.error('Failed to switch mode') }
-                }}>
-                {m === 'demo' ? '🟢 ' : '🔴 '}{t(`game.mode.${m}`)}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Recent strip */}
         {recentBets.length > 0 && (
           <div className="px-4 py-2">
