@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { LogOut, TrendingUp, Award, Shield } from 'lucide-react'
+import { LogOut, TrendingUp, ArrowDownLeft, ArrowUpRight, Shield } from 'lucide-react'
 import { authAPI, fmtUZS } from '../../api/client'
 import { useAuthStore } from '../../store'
 import { Spinner } from '../../components/ui'
@@ -127,11 +127,15 @@ const Profile: React.FC = () => {
           <div className="flex gap-2">
             <button className="flex-1 py-3 rounded-2xl text-sm font-bold bg-db-elevated text-db-text2 hover:text-white transition-all flex items-center justify-center gap-2"
               onClick={() => nav('/deposit')}>
-              <Award size={16} className="text-db-gold"/> Deposit
+              <ArrowDownLeft size={16} className="text-db-green"/> Deposit
             </button>
             <button className="flex-1 py-3 rounded-2xl text-sm font-bold bg-db-elevated text-db-text2 hover:text-white transition-all flex items-center justify-center gap-2"
-              onClick={() => nav('/history')}>
-              <TrendingUp size={16} className="text-db-blue"/> History
+              onClick={() => nav('/withdraw')}>
+              <ArrowUpRight size={16} className="text-db-red"/> Withdraw
+            </button>
+            <button className="flex-1 py-3 rounded-2xl text-sm font-bold bg-db-elevated text-db-text2 hover:text-white transition-all flex items-center justify-center gap-2"
+              onClick={() => nav('/transactions')}>
+              <TrendingUp size={16} className="text-db-blue"/> Wallet
             </button>
           </div>
 
