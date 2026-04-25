@@ -1,0 +1,80 @@
+{
+  "nav": { "game": "O'yin", "history": "Tarix", "wallet": "Hamyon", "profile": "Profil", "deposit": "Deposit" },
+  "auth": {
+    "login": "Kirish", "register": "Ro'yxatdan o'tish",
+    "username": "Foydalanuvchi nomi", "password": "Parol",
+    "noAccount": "Hisobingiz yo'qmi?", "hasAccount": "Hisobingiz bormi?",
+    "loginBtn": "Kirish", "registerBtn": "Hisob yaratish",
+    "usernamePlaceholder": "Foydalanuvchi nomi (8-32 belgi)",
+    "passwordPlaceholder": "Parol (8-32 belgi)",
+    "errors": {
+      "invalid_credentials": "Noto'g'ri foydalanuvchi nomi yoki parol.",
+      "banned": "Hisobingiz bloklangan. Qo'llab-quvvatlash bilan bog'laning.",
+      "username_taken": "Bu nom allaqachon band.",
+      "username_short": "Nom kamida 8 ta belgidan iborat bo'lishi kerak.",
+      "username_long": "Nom 32 belgidan oshmasligi kerak.",
+      "password_short": "Parol kamida 8 ta belgidan iborat bo'lishi kerak.",
+      "network": "Ulanish xatosi. Internetni tekshiring.",
+      "unknown": "Xato yuz berdi. Qayta urinib ko'ring."
+    }
+  },
+  "game": {
+    "title": "Crash", "betAmount": "Bahis miqdori", "targetMultiplier": "Maqsad ko'paytuvchi",
+    "winChance": "Yutish ehtimoli", "placeBet": "Bahis qo'yish", "betting": "Joylashtirilmoqda...",
+    "minBet": "Min: 1 000 UZS", "minTarget": "Min: 1.5x",
+    "mode": { "demo": "DEMO", "real": "REAL" },
+    "result": { "won": "YUTDINGIZ!", "lost": "CRASH", "crashedAt": "Crash nuqtasi", "payout": "To'lov" },
+    "recentBets": "So'nggi",
+    "errors": {
+      "insufficient": "Balans yetarli emas", "minBet": "Minimal bahis 1 000 UZS",
+      "minTarget": "Minimal ko'paytuvchi 1.5x", "banned": "Hisob bloklangan"
+    }
+  },
+  "history": {
+    "title": "Bahislar tarixi",
+    "filter": { "all": "Barchasi", "won": "Yutganlar", "lost": "Yutqazganlar", "demo": "Demo", "real": "Real" },
+    "table": { "amount": "Miqdor", "target": "Maqsad", "crash": "Crash", "result": "Natija", "payout": "To'lov", "mode": "Rejim", "date": "Sana" },
+    "empty": "Hali bahis yo'q", "won": "YUTDI", "lost": "YUTQAZDI"
+  },
+  "transactions": {
+    "title": "Tranzaksiyalar", "deposit": "Deposit", "withdraw": "Yechib olish",
+    "status": { "pending": "Kutilmoqda", "approved": "Tasdiqlandi", "rejected": "Rad etildi" },
+    "empty": "Tranzaksiyalar yo'q", "amount": "Miqdor", "date": "Sana", "card": "Karta"
+  },
+  "deposit": {
+    "title": "Deposit", "amount": "Miqdor (UZS)", "minDeposit": "Minimal: 10 000 UZS",
+    "cheque": "To'lov cheki", "chequeHelp": "O'tkazma skrinshotini yoki PDF ni yuklang",
+    "promoCode": "Promo kod (ixtiyoriy)", "submitBtn": "Ariza yuborish",
+    "sendTo": "Ushbu kartaga yuboring:", "cardHolder": "Karta egasi", "cardType": "Karta turi",
+    "copyCard": "Raqamni nusxalash", "copied": "Nusxalandi!",
+    "instructions": "Miqdorni yuboring va chekni yuklang",
+    "success": "Deposit arizasi yuborildi! Admin tasdig'ini kuting.",
+    "errors": {
+      "minAmount": "Minimal deposit 10 000 UZS", "noCard": "Karta mavjud emas. Qo'llab-quvvatlash bilan bog'laning.",
+      "fileType": "Faqat JPG, PNG, PDF ruxsat etilgan", "fileSize": "Maksimal hajm 10MB", "noFile": "To'lov chekini yuklang"
+    }
+  },
+  "withdraw": {
+    "title": "Yechib olish", "amount": "Miqdor (UZS)", "cardNumber": "Karta raqami", "cardType": "Karta turi",
+    "minWithdraw": "Minimal: 50 000 UZS", "submitBtn": "Ariza yuborish",
+    "wageringWarning": "Yechib olishdan oldin {{amount}} UZS ko'proq bahis qo'yishingiz kerak.",
+    "success": "Yechib olish arizasi yuborildi!",
+    "errors": {
+      "minAmount": "Minimal yechib olish 50 000 UZS", "insufficient": "Balans yetarli emas",
+      "wagering": "Avval bahis talabini bajaring", "pending": "Sizda kutilayotgan ariza bor"
+    }
+  },
+  "profile": {
+    "title": "Profil", "balance": "Balans", "bonusBalance": "Bonus", "totalBalance": "Jami",
+    "wagering": "Veyjer", "wageringProgress": "{{wagered}} / {{required}} UZS",
+    "unlocked": "Yechib olish ochildi ✓", "gameMode": "O'yin rejimi", "language": "Til",
+    "stats": { "totalBets": "Jami bahislar", "wins": "G'alabalar", "losses": "Mag'lubiyatlar", "winRate": "Yutish darajasi", "totalBet": "Jami bahis qo'yildi", "totalWon": "Jami yutildi" },
+    "logout": "Chiqish", "myBonuses": "Mening Bonuslarim"
+  },
+  "common": { "loading": "Yuklanmoqda...", "error": "Xato", "retry": "Qayta urinish", "cancel": "Bekor qilish", "confirm": "Tasdiqlash", "save": "Saqlash", "close": "Yopish", "currency": "UZS", "noData": "Ma'lumot yo'q" },
+  "admin": {
+    "login": "Admin kirish", "dashboard": "Boshqaruv paneli", "users": "Foydalanuvchilar",
+    "deposits": "Deposits", "withdrawals": "Yechib olishlar", "promos": "Promo kodlar", "logout": "Chiqish",
+    "errors": { "wrong_password": "Noto'g'ri admin ma'lumotlari. Kirish rad etildi.", "not_staff": "Bu hisobda admin huquqlari yo'q.", "network": "Server bilan ulanib bo'lmadi." }
+  }
+}
