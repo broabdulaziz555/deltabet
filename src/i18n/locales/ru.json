@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "game": "Игра",
+    "history": "История",
+    "wallet": "Кошелёк",
+    "profile": "Профиль",
+    "deposit": "Deposit",
+    "withdraw": "Вывод"
+  },
+  "auth": {
+    "login": "Войти",
+    "register": "Регистрация",
+    "username": "Имя пользователя",
+    "password": "Пароль",
+    "noAccount": "Нет аккаунта?",
+    "hasAccount": "Уже есть аккаунт?",
+    "loginBtn": "Войти",
+    "registerBtn": "Создать аккаунт",
+    "usernamePlaceholder": "Имя пользователя (8-32 симв.)",
+    "passwordPlaceholder": "Пароль (8-32 симв.)",
+    "promoCode": "Промокод (необязательно)",
+    "promoCodePlaceholder": "Введите промокод",
+    "errors": {
+      "invalid_credentials": "Неверное имя пользователя или пароль.",
+      "banned": "Ваш аккаунт заблокирован. Обратитесь в поддержку.",
+      "username_taken": "Это имя уже занято.",
+      "username_short": "Имя должно содержать минимум 8 символов.",
+      "username_long": "Имя не может превышать 32 символа.",
+      "password_short": "Пароль должен содержать минимум 8 символов.",
+      "network": "Ошибка подключения. Проверьте интернет.",
+      "unknown": "Что-то пошло не так. Попробуйте снова.",
+      "invalid_promo": "Недействительный или неактивный промокод."
+    }
+  },
+  "game": {
+    "title": "Краш",
+    "betAmount": "Сумма ставки",
+    "targetMultiplier": "Целевой множитель",
+    "winChance": "Шанс выигрыша",
+    "placeBet": "Сделать ставку",
+    "betting": "Размещение...",
+    "minBet": "Мин: 1 000 UZS",
+    "minTarget": "Мин: 1.5x",
+    "mode": {
+      "demo": "ДЕМО",
+      "real": "РЕАЛ"
+    },
+    "result": {
+      "won": "ВЫ ВЫИГРАЛИ!",
+      "lost": "КРАШ",
+      "crashedAt": "Краш на",
+      "payout": "Выплата"
+    },
+    "recentBets": "Недавние",
+    "errors": {
+      "insufficient": "Недостаточно средств",
+      "minBet": "Минимальная ставка 1 000 UZS",
+      "minTarget": "Минимальный множитель 1.5x",
+      "banned": "Аккаунт заблокирован"
+    }
+  },
+  "history": {
+    "title": "История ставок",
+    "filter": {
+      "all": "Все",
+      "won": "Выигрыши",
+      "lost": "Проигрыши",
+      "demo": "Демо",
+      "real": "Реал"
+    },
+    "table": {
+      "amount": "Сумма",
+      "target": "Цель",
+      "crash": "Краш",
+      "result": "Результат",
+      "payout": "Выплата",
+      "mode": "Режим",
+      "date": "Дата"
+    },
+    "empty": "Ставок пока нет",
+    "won": "ПОБЕДА",
+    "lost": "ПРОИГРЫШ"
+  },
+  "transactions": {
+    "title": "Транзакции",
+    "deposit": "Deposit",
+    "withdraw": "Вывод",
+    "status": {
+      "pending": "Ожидание",
+      "uploaded": "Чек отправлен",
+      "approved": "Одобрено",
+      "rejected": "Отклонено",
+      "expired": "Истекло"
+    },
+    "empty": "Транзакций нет",
+    "amount": "Сумма",
+    "date": "Дата",
+    "card": "Карта"
+  },
+  "deposit": {
+    "title": "Deposit",
+    "amount": "Сумма (UZS)",
+    "minDeposit": "Минимум: 10 000 UZS",
+    "cheque": "Чек оплаты",
+    "chequeHelp": "Загрузите скриншот или PDF перевода",
+    "promoCode": "Промокод (необязательно)",
+    "submitBtn": "Продолжить",
+    "sendTo": "Отправьте на:",
+    "cardHolder": "Держатель",
+    "cardType": "Тип карты",
+    "copyCard": "Копировать номер",
+    "copied": "Скопировано!",
+    "instructions": "Отправьте сумму и загрузите чек",
+    "selectCardType": "Выберите способ оплаты",
+    "uzcard": "Uzcard",
+    "humo": "Humo",
+    "bankCard": "Банковская карта",
+    "timeRemaining": "Осталось времени",
+    "transferred": "Перевёл — загрузить чек",
+    "uploadChequeBtn": "Отправить чек",
+    "expiredTitle": "Заявка истекла",
+    "expiredMsg": "25-минутное окно прошло. Создайте новую заявку.",
+    "newDeposit": "Новый deposit",
+    "step1": "Сумма и метод",
+    "step2": "Отправьте перевод",
+    "step3": "Загрузите чек",
+    "success": "Чек отправлен! Ожидайте подтверждения администратора.",
+    "errors": {
+      "minAmount": "Минимальный deposit 10 000 UZS",
+      "noCard": "Карты недоступны. Свяжитесь с поддержкой.",
+      "fileType": "Только JPG, PNG, PDF",
+      "fileSize": "Максимум 10МБ",
+      "noFile": "Загрузите чек оплаты",
+      "expired": "Заявка истекла. Создайте новую."
+    }
+  },
+  "withdraw": {
+    "title": "Вывод",
+    "amount": "Сумма (UZS)",
+    "cardNumber": "Номер карты",
+    "cardType": "Тип карты",
+    "minWithdraw": "Минимум: 50 000 UZS",
+    "submitBtn": "Отправить заявку",
+    "wageringWarning": "Нужно сделать ставок ещё на {{amount}} UZS перед выводом.",
+    "success": "Заявка на вывод отправлена!",
+    "errors": {
+      "minAmount": "Минимальный вывод 50 000 UZS",
+      "insufficient": "Недостаточно средств",
+      "wagering": "Сначала выполните требование по ставкам",
+      "pending": "У вас уже есть ожидающая заявка"
+    }
+  },
+  "profile": {
+    "title": "Профиль",
+    "balance": "Баланс",
+    "bonusBalance": "Bonus",
+    "totalBalance": "Всего",
+    "wagering": "Вейджер",
+    "wageringProgress": "{{wagered}} / {{required}} UZS",
+    "unlocked": "Вывод разблокирован ✓",
+    "gameMode": "Режим игры",
+    "language": "Язык",
+    "stats": {
+      "totalBets": "Всего ставок",
+      "wins": "Победы",
+      "losses": "Поражения",
+      "winRate": "Винрейт",
+      "totalBet": "Всего поставлено",
+      "totalWon": "Всего выиграно"
+    },
+    "logout": "Выйти",
+    "myBonuses": "Мои Bonus"
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "retry": "Повторить",
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "save": "Сохранить",
+    "close": "Закрыть",
+    "currency": "UZS",
+    "noData": "Нет данных"
+  },
+  "admin": {
+    "login": "Вход в панель",
+    "dashboard": "Главная",
+    "users": "Пользователи",
+    "deposits": "Deposits",
+    "withdrawals": "Выводы",
+    "promos": "Промокоды",
+    "logout": "Выйти",
+    "errors": {
+      "wrong_password": "Неверные учётные данные администратора.",
+      "not_staff": "У этого аккаунта нет прав администратора.",
+      "network": "Нет соединения с сервером."
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "game": "Game",
+    "history": "History",
+    "wallet": "Wallet",
+    "profile": "Profile",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "username": "Username",
+    "password": "Password",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "loginBtn": "Login",
+    "registerBtn": "Create Account",
+    "usernamePlaceholder": "Enter username (8-32 chars)",
+    "passwordPlaceholder": "Enter password (8-32 chars)",
+    "promoCode": "Promo code (optional)",
+    "promoCodePlaceholder": "Enter promo code",
+    "errors": {
+      "invalid_credentials": "Wrong username or password. Please check and try again.",
+      "banned": "Your account has been suspended. Contact support.",
+      "username_taken": "This username is already taken.",
+      "username_short": "Username must be at least 8 characters.",
+      "username_long": "Username cannot exceed 32 characters.",
+      "password_short": "Password must be at least 8 characters.",
+      "network": "Connection error. Check your internet and try again.",
+      "unknown": "Something went wrong. Please try again.",
+      "invalid_promo": "Invalid or inactive promo code."
+    }
+  },
+  "game": {
+    "title": "Crash",
+    "betAmount": "Bet Amount",
+    "targetMultiplier": "Target Multiplier",
+    "winChance": "Win Chance",
+    "placeBet": "Place Bet",
+    "betting": "Placing...",
+    "minBet": "Min: 1,000 UZS",
+    "minTarget": "Min: 1.5x",
+    "mode": {
+      "demo": "DEMO",
+      "real": "REAL"
+    },
+    "result": {
+      "won": "YOU WON!",
+      "lost": "CRASHED",
+      "crashedAt": "Crashed at",
+      "payout": "Payout"
+    },
+    "recentBets": "Recent",
+    "errors": {
+      "insufficient": "Insufficient balance",
+      "minBet": "Minimum bet is 1,000 UZS",
+      "minTarget": "Minimum target is 1.5x",
+      "banned": "Account is suspended"
+    }
+  },
+  "history": {
+    "title": "Bet History",
+    "filter": {
+      "all": "All",
+      "won": "Won",
+      "lost": "Lost",
+      "demo": "Demo",
+      "real": "Real"
+    },
+    "table": {
+      "amount": "Amount",
+      "target": "Target",
+      "crash": "Crash",
+      "result": "Result",
+      "payout": "Payout",
+      "mode": "Mode",
+      "date": "Date"
+    },
+    "empty": "No bets yet. Place your first bet!",
+    "won": "WIN",
+    "lost": "LOSS"
+  },
+  "transactions": {
+    "title": "Transactions",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "status": {
+      "pending": "Pending",
+      "uploaded": "Cheque Sent",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "expired": "Expired"
+    },
+    "empty": "No transactions yet",
+    "amount": "Amount",
+    "date": "Date",
+    "card": "Card"
+  },
+  "deposit": {
+    "title": "Deposit",
+    "amount": "Amount (UZS)",
+    "minDeposit": "Minimum deposit: 10,000 UZS",
+    "cheque": "Payment cheque",
+    "chequeHelp": "Upload screenshot or PDF of your transfer",
+    "promoCode": "Promo code (optional)",
+    "submitBtn": "Continue",
+    "sendTo": "Send payment to:",
+    "cardHolder": "Card holder",
+    "cardType": "Card type",
+    "copyCard": "Copy card number",
+    "copied": "Copied!",
+    "instructions": "Send the exact amount, then upload the cheque",
+    "selectCardType": "Select payment method",
+    "uzcard": "Uzcard",
+    "humo": "Humo",
+    "bankCard": "Bank card",
+    "timeRemaining": "Time remaining",
+    "transferred": "I've transferred — upload cheque",
+    "uploadChequeBtn": "Submit cheque",
+    "expiredTitle": "Request expired",
+    "expiredMsg": "The 25-minute window has passed. Please create a new deposit.",
+    "newDeposit": "New deposit",
+    "step1": "Amount & method",
+    "step2": "Send payment",
+    "step3": "Upload cheque",
+    "success": "Cheque submitted! Awaiting admin approval.",
+    "errors": {
+      "minAmount": "Minimum deposit is 10,000 UZS",
+      "noCard": "No payment cards available. Contact support.",
+      "fileType": "Only JPG, PNG, PDF files allowed",
+      "fileSize": "File size must be under 10MB",
+      "noFile": "Please upload your payment cheque",
+      "expired": "Deposit has expired. Please create a new one."
+    }
+  },
+  "withdraw": {
+    "title": "Withdraw",
+    "amount": "Amount (UZS)",
+    "cardNumber": "Card number",
+    "cardType": "Card type",
+    "minWithdraw": "Minimum: 50,000 UZS",
+    "submitBtn": "Submit Request",
+    "wageringWarning": "You must bet {{amount}} UZS more before withdrawing.",
+    "success": "Withdrawal request submitted!",
+    "errors": {
+      "minAmount": "Minimum withdrawal is 50,000 UZS",
+      "insufficient": "Insufficient balance",
+      "wagering": "Complete wagering requirement first",
+      "pending": "You already have a pending withdrawal"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "balance": "Balance",
+    "bonusBalance": "Bonus",
+    "totalBalance": "Total",
+    "wagering": "Wagering",
+    "wageringProgress": "{{wagered}} / {{required}} UZS",
+    "unlocked": "Withdrawal unlocked ✓",
+    "gameMode": "Game Mode",
+    "language": "Language",
+    "stats": {
+      "totalBets": "Total Bets",
+      "wins": "Wins",
+      "losses": "Losses",
+      "winRate": "Win Rate",
+      "totalBet": "Total Bet",
+      "totalWon": "Total Won"
+    },
+    "logout": "Logout",
+    "myBonuses": "My Bonuses"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "close": "Close",
+    "currency": "UZS",
+    "noData": "No data"
+  },
+  "admin": {
+    "login": "Admin Login",
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "deposits": "Deposits",
+    "withdrawals": "Withdrawals",
+    "promos": "Promo Codes",
+    "logout": "Logout",
+    "errors": {
+      "wrong_password": "Wrong admin credentials. Access denied.",
+      "not_staff": "This account does not have admin privileges.",
+      "network": "Cannot connect to server."
+    }
+  }
+}
