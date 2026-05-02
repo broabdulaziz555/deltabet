@@ -145,7 +145,7 @@ const Register: React.FC = () => {
             <h1 className="text-xl font-black mb-1 text-center">{t('auth.register')}</h1>
             {/* Bonus teaser */}
             <p className="text-center text-xs text-db-gold font-semibold mb-5">
-              🎁 Get 10,000 UZS bonus on registration — no deposit needed
+              🎁 Get 30,000 UZS bonus on registration — no deposit needed
             </p>
 
             {serverError && (
